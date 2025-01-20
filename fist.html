@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
     <style>
-        body{
-            display: flex;
-           justify-content: center;
-           align-items: center;
-
-            height: 100vh;
-        }
         section{
             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background-color: rgb(141, 126, 126);
+            gap: 20px;
+            /* flex-direction: column; */
+        }
+        button{
+            cursor: pointer;
+             position: relative;
+             top: 20px;
+            height: auto;
+            width: 300px;
+            padding: 10px 30px;
+            margin: auto;
+            display: grid;
+            place-items: center;
+            color: white;
+            background-color: rgb(169, 153, 153);
+            outline: none;
+            border: none;
 
-            background-color: rgb(148, 124, 124);
-            width: 100px;
-            height: 200px;
-            padding:20px 20px;
-     
+        }
+
+        div,img{
+            cursor: pointer;
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: all 1s ease-in-out;
+        }
+        div,img:hover{
+            transform: rotate(360deg);
+
+        }
+
     </style>
 </head>
 <body>
-    <section>
-   <div class="main">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-   </div>
-   <div class="main">
-    <button>6</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-   </div>
-   <div class="main">
-    <button>+</button>
-    <button>-</button>
-    <button>*</button>
-    <button>=</button>
-   </div>
-   <div class="main">
-    <button>del</button>
-    <button>**</button>
-    <button>0</button>
-    <button>00</button>
-   </div>
+    <!-- <section -->
+     <section>
+    <div>
+        <img src="./image/image2.jpg" alt="">
+    </div>
+    <div><img src="./image/image1.webp" alt=""></div>
+    <div><img src="./image/images.jpeg" alt=""></div>
+    <div><img src="./image/image3.jpeg" alt=""></div>
+    <div id="typewriter"></div>
+
 </section>
+<button>click here</button>
+
+    <script>
+        
+const text = "Welcome to the Railway Reservation System!";
+const typewriterElement = document.getElementById("typewriter");
+let index = 0;
+const speed = 100;
+
+function typeWriter() {
+  if (index < text.length) {
+    typewriterElement.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter();
+        let ele1=document.querySelector('button');
+        ele1.addEventListener('click',()=>{
+            alert("welcome back akhil");
+        });
+        let ele=document.querySelectorAll('div');
+        ele.forEach((ele)=>{
+            ele.style.backgroundColor='red'
+            ele.style.border='2px solid green'
+          })
+    </script>
 </body>
 </html>
