@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+   button{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+   }
+  
+    </style>
 </head>
 <body>
     <p>hello world</p>
+   <button class="main">click me</button>
+   
 </body>
 <script>
     let ele=document.querySelector('p');
-    ele.innerText="welcome back akhil"
+    let ele1=document.querySelector('button');
+    ele.innerText="welcome back akhil";
+
+
+    
+// ele1.classList.add(main);
+
+ele1.addEventListener('click',()=>{
+  alert('welcome bakc');
+})
+
 </script>
 </html>
